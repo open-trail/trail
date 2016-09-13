@@ -15,7 +15,9 @@ module.exports = {
                     let last = args[args.length - 1]
 
                     let span = agent.fork(command)
-                    span.setTag('host', this.address)
+                    const address = (this.address || 'localhost').split(':')
+                    span.setTag('host', address[0])
+                    span.setTag('port', address[1] || '6379')
                     span.setTag('protocol', 'redis')
 
                     let wrappedCallback = function (originalCallback) {

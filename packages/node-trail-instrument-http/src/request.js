@@ -23,7 +23,7 @@ function wrapRequest(originalHttpRequest, agent) {
         const span = agent.fork(requestParams.path, agent.FORMAT_TEXT_MAP,
                               requestParams.headers)
         span.setTag('host', requestParams.host || 'localhost')
-        span.setTag('host', requestParams.port || '80')
+        span.setTag('port', requestParams.port || '80')
         span.setTag('protocol', 'http')
 
         const returned = originalHttpRequest.apply(this, arguments)

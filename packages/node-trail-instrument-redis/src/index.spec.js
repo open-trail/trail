@@ -61,7 +61,7 @@ describe('redis wrap', function () {
             new RedisClient(), ['hset', ['abc', 'def']])
 
         expect(agent.fork).to.have.been.calledOnce
-        expect(span.setTag).to.have.been.callCount(3)
+        expect(span.setTag).to.have.been.callCount(4)
         expect(span.finish).to.have.been.calledOnce
         expect(span.setTag).to.have.been.calledWith('status', 1)
     })
