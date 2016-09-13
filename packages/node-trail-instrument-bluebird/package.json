@@ -2,7 +2,7 @@
   "name": "trail-instrument-bluebird",
   "description": "Instrument bluebird for trail",
   "repository": "open-trail/node-trail-instrument-bluebird",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "main": "dist/index.js",
   "keywords": [],
   "files": [
@@ -13,12 +13,12 @@
     "bluebird": "^3.4.6",
     "isparta": "^4.0.0",
     "mocha": "^2.4.5",
-    "trail-agent": "^1.1.2"
+    "trail-agent": "^2.0.0"
   },
   "license": "MIT",
   "dependencies": {
     "debug": "^2.2.0",
-    "trail-shimmer": "^0.1.2"
+    "trail-shimmer": "^2.0.0"
   },
   "scripts": {
     "prebuild": "rm -rf dist",

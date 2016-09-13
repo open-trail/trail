@@ -2,7 +2,7 @@
   "name": "trail-shimmer",
   "description": "",
   "repository": "open-trail/node-trail-shimmer",
-  "version": "0.1.2",
+  "version": "2.0.0",
   "main": "dist/index.js",
   "keywords": [],
   "files": [

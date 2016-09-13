@@ -2,7 +2,7 @@
   "name": "trail-instrument-http",
   "description": "Instrument http core library for trail",
   "repository": "open-trail/node-trail-instrument-http",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "main": "dist/index.js",
   "keywords": [],
   "files": [
@@ -14,12 +14,12 @@
     "dnode": "^1.2.2",
     "istanbul": "^0.4.3",
     "mocha": "^2.4.5",
-    "trail-agent": "^1.1.2"
+    "trail-agent": "^2.0.0"
   },
   "license": "MIT",
   "dependencies": {
     "debug": "^2.2.0",
-    "trail-shimmer": "^0.1.1"
+    "trail-shimmer": "^2.0.0"
   },
   "scripts": {
     "prebuild": "rm -rf dist",

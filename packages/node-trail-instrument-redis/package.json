@@ -2,7 +2,7 @@
   "name": "trail-instrument-redis",
   "description": "Instrument redis for trail",
   "repository": "open-trail/node-trail-instrument-redis",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "main": "dist/index.js",
   "keywords": [],
   "files": [
@@ -13,12 +13,12 @@
     "istanbul": "^0.4.3",
     "mocha": "^2.4.5",
     "redis": "^0.12.1",
-    "trail-agent": "^1.1.2"
+    "trail-agent": "^2.0.0"
   },
   "license": "MIT",
   "dependencies": {
     "debug": "^2.2.0",
-    "trail-shimmer": "^0.1.1"
+    "trail-shimmer": "^2.0.0"
   },
   "scripts": {
     "prebuild": "rm -rf dist",
