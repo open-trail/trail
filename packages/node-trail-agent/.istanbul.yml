@@ -1,0 +1,3 @@
+instrumentation:
+    root: dist
+    excludes: ['**/*.spec.js']

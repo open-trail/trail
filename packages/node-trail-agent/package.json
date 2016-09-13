@@ -1,0 +1,39 @@
+{
+  "name": "trail-agent",
+  "description": "Distributed tracing agent for Node.js",
+  "repository": "open-trail/node-trail-agent",
+  "version": "1.1.2",
+  "main": "dist/index.js",
+  "keywords": [],
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "babel-cli": "^6.7.7",
+    "istanbul": "^0.4.3",
+    "mocha": "^2.4.5",
+    "redis": "^2.6.0-2",
+    "trail-instrument-redis": "^1.0.0"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "basictracer": "^0.4.0",
+    "continuation-local-storage": "^3.1.7",
+    "debug": "^2.2.0",
+    "trail-instrument-http": "^1.0.0",
+    "trail-shimmer": "^0.1.1"
+  },
+  "scripts": {
+    "prebuild": "rm -rf dist",
+    "build": "babel src -d dist --copy-files",
+    "watch": "babel src -d dist --copy-files -w",
+    "pretest": "npm run build",
+    "test": "NODE_ENV=test mocha --reporter spec $npm_package_options_mocha 'dist/**/*.spec.js'",
+    "test-cov": "NODE_ENV=test istanbul cover --report html _mocha -- $npm_package_options_mocha 'dist/**/*.spec.js'",
+    "test-travis": "NODE_ENV=test istanbul cover --report lcovonly _mocha -- $npm_package_options_mocha 'dist/**/*.spec.js'",
+    "prepublish": "npm run build"
+  },
+  "options": {
+    "mocha": "--require resources/mocha-bootload --check-leaks --full-trace"
+  }
+}

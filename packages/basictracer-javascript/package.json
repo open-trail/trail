@@ -1,0 +1,38 @@
+{
+  "name": "basictracer",
+  "description": "The Javascript implementation of the BasicTracer referrence implementation",
+  "repository": "open-trail/basictracer-javascript",
+  "version": "0.4.2",
+  "main": "dist/index.js",
+  "keywords": [
+    "trace"
+  ],
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "babel-cli": "^6.7.7",
+    "isparta": "^4.0.0",
+    "mocha": "^2.4.5"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "debug": "^2.2.0",
+    "lodash.clone": "^4.3.2",
+    "long": "^3.1.0",
+    "node-uuid": "^1.4.7",
+    "protobufjs": "^5.0.1"
+  },
+  "scripts": {
+    "debug": "./node_modules/.bin/mocha --debug-brk --require should test",
+    "prebuild": "rm -rf dist",
+    "build": "babel src -d dist --copy-files",
+    "test": "NODE_ENV=test babel-node ./node_modules/.bin/_mocha --reporter spec $npm_package_options_mocha",
+    "test-cov": "NODE_ENV=test babel-node ./node_modules/.bin/isparta cover --root src --report html _mocha -- $npm_package_options_mocha",
+    "test-travis": "NODE_ENV=test babel-node ./node_modules/.bin/isparta cover --root src --report lcovonly _mocha -- $npm_package_options_mocha",
+    "prepublish": "npm run build"
+  },
+  "options": {
+    "mocha": "--require ./resources/mocha-bootload --check-leaks --full-trace src/**/__tests__/**/*-test.js"
+  }
+}

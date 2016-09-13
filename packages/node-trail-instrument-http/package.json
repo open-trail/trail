@@ -1,0 +1,37 @@
+{
+  "name": "trail-instrument-http",
+  "description": "Instrument http core library for trail",
+  "repository": "open-trail/node-trail-instrument-http",
+  "version": "1.1.0",
+  "main": "dist/index.js",
+  "keywords": [],
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "babel-cli": "^6.7.7",
+    "continuation-local-storage": "^3.2.0",
+    "dnode": "^1.2.2",
+    "istanbul": "^0.4.3",
+    "mocha": "^2.4.5",
+    "trail-agent": "^1.1.2"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "debug": "^2.2.0",
+    "trail-shimmer": "^0.1.1"
+  },
+  "scripts": {
+    "prebuild": "rm -rf dist",
+    "build": "babel src -d dist --copy-files",
+    "watch": "babel src -d dist --copy-files -w",
+    "pretest": "npm run build",
+    "test": "NODE_ENV=test mocha --reporter spec $npm_package_options_mocha 'dist/**/*.spec.js'",
+    "test-cov": "NODE_ENV=test istanbul cover --report html _mocha -- $npm_package_options_mocha 'dist/**/*.spec.js'",
+    "test-travis": "NODE_ENV=test istanbul cover --report lcovonly _mocha -- $npm_package_options_mocha 'dist/**/*.spec.js'",
+    "prepublish": "npm run build"
+  },
+  "options": {
+    "mocha": "--require ./resources/mocha-bootload --check-leaks --full-trace resources/setup.js"
+  }
+}

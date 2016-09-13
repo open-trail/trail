@@ -1,0 +1,22 @@
+#! /bin/bash
+
+# https://gist.github.com/stevemao/280ef22ee861323993a0
+# npm install -g commitizen cz-conventional-changelog trash-cli conventional-recommended-bump conventional-changelog-cli conventional-commits-detector json
+trash node_modules &>/dev/null;
+git pull --rebase &&
+npm install &&
+npm test &&
+cp package.json _package.json &&
+preset=`conventional-commits-detector` &&
+echo $preset &&
+bump=`conventional-recommended-bump -p angular` &&
+echo ${1:-$bump} &&
+npm --no-git-tag-version version ${1:-$bump} &>/dev/null &&
+conventional-changelog -i History.md -s -p ${2:-$preset} &&
+git add History.md &&
+version=`cat package.json | json version` &&
+git commit -m"docs(CHANGELOG): $version" &&
+mv -f _package.json package.json &&
+npm version ${1:-$bump} -m "chore(release): %s" &&
+git push --follow-tags &&
+npm publish
