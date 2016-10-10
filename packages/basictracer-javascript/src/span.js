@@ -68,9 +68,7 @@ export default class Span {
 
     finish(finishTime = Date.now()) {
         this.duration = finishTime - this.startTime
-        if (this.sampled) {
-            this._tracer._record(this)
-        }
+        this._tracer._record(this)
     }
 
     static generateUUID() {
