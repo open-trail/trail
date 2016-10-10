@@ -2,7 +2,7 @@
   "name": "trail-instrument-bluebird-main",
   "description": "Instrument bluebird/js/main/promise for trail",
   "repository": "open-trail/node-trail-instrument-bluebird-main",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "main": "dist/index.js",
   "keywords": [],
   "files": [
@@ -12,7 +12,7 @@
     "babel-cli": "^6.7.7",
     "isparta": "^4.0.0",
     "mocha": "^2.4.5",
-    "trail-agent": "^2.1.0"
+    "trail-agent": "^2.2.0"
   },
   "license": "MIT",
   "dependencies": {
