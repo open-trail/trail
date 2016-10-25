@@ -37,6 +37,7 @@ function wrapRequest(originalHttpRequest, agent) {
         returned.on('response', function (incomingMessage) {
             let status = incomingMessage.statusCode > 399 ? 1 : 0
             span.setTag('status', status)
+            span.setTag('statusCode', incomingMessage.statusCode)
             span.finish()
         })
 

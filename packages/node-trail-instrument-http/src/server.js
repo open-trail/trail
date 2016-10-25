@@ -14,6 +14,7 @@ function wrapListener(listener, agent) {
         response.once('finish', function instrumentedFinish() {
             let status = response.statusCode > 399 ? 1 : 0
             span.setTag('status', status)
+            span.setTag('statusCode', response.statusCode)
             span.finish()
         })
 
