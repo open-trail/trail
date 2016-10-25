@@ -58,7 +58,7 @@ describe('http.request wrap', () => {
         setTimeout(() => {
             onResponse({statusCode: 200})
             let [span] = records
-            expect(span.operationName).to.eql(path)
+            expect(span.operationName).to.eql('GET ' + path)
             expect(span.tags.protocol).to.eql('http')
             expect(span.duration).to.not.below(delay)
             done()

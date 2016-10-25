@@ -47,6 +47,7 @@ describe('http.Server wrap', () => {
                 host: 'localhost',
             },
             url: '/',
+            method: 'GET',
         }
         let response = {
             once(name, cb) {
@@ -67,7 +68,7 @@ describe('http.Server wrap', () => {
 
             expect(records.length).to.eql(1)
             let [span] = records
-            expect(span.operationName).to.eql('/')
+            expect(span.operationName).to.eql('GET /')
             expect(span.tags.protocol).to.eql('http')
             expect(span.duration).to.not.below(delay)
 

@@ -5,7 +5,7 @@ function wrapListener(listener, agent) {
         const requestUrl = request.url.split('?')[0]
         const headers = request.headers
 
-        const span = agent.start(requestUrl, agent.FORMAT_TEXT_MAP, headers)
+        const span = agent.start(request.method + ' ' + requestUrl, agent.FORMAT_TEXT_MAP, headers)
         const address = headers.host.split(':')
         span.setTag('host', address[0])
         span.setTag('port', address[1] || '80')

@@ -17,11 +17,17 @@ function wrapRequest(originalHttpRequest, agent) {
             requestParams.host = requestParams.hostname
         }
 
+        if (!requestParams.method) {
+            requestParams.method = 'GET'
+        }
+        requestParams.method = requestParams.method.toUpperCase()
+
         // decorate headers
         requestParams.headers = requestParams.headers || {}
 
-        const span = agent.fork(requestParams.path, agent.FORMAT_TEXT_MAP,
-                              requestParams.headers)
+        const span = agent.fork(requestParams.method + ' ' + requestParams.path,
+                                agent.FORMAT_TEXT_MAP,
+                                requestParams.headers)
         span.setTag('host', requestParams.host || 'localhost')
         span.setTag('port', requestParams.port || '80')
         span.setTag('protocol', 'http')

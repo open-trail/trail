@@ -30,7 +30,7 @@
   },
   "config": {
     "ghooks": {
-      "pre-commit": "lerna run build && npm run lint && lerna run --concurrency 1 test-cov"
+      "pre-commit": "npm run lint && lerna run build && lerna run --concurrency 1 test-cov"
     },
     "commitizen": {
       "path": "cz-conventional-changelog"

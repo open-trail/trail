@@ -33,7 +33,7 @@ describe('http.request e2e', () => {
         http.get({port: HTTP_PORT, path}, (res) => {
             res.on('data', () => {
                 let [span] = records
-                expect(span.operationName).to.eql(path)
+                expect(span.operationName).to.eql('GET ' + path)
                 expect(span.tags.protocol).to.eql('http')
                 done()
             })

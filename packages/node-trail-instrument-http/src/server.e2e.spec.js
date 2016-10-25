@@ -36,7 +36,7 @@ describe('http.Server e2e', () => {
         remote.request({port: HTTP_PORT, path}, () => {
             expect(records.length).to.eql(1)
             let [span] = records
-            expect(span.operationName).to.eql(path)
+            expect(span.operationName).to.eql('GET ' + path)
             expect(span.tags.protocol).to.eql('http')
             done()
         })
@@ -50,7 +50,7 @@ describe('http.Server e2e', () => {
         let path = '/join-span'
         remote.request({port: HTTP_PORT, path, headers}, () => {
             let [span] = records
-            expect(span.operationName).to.eql(path)
+            expect(span.operationName).to.eql('GET ' + path)
             expect(rootSpan.spanId.equals(span.parentId)).to.be.true
             done()
         })
