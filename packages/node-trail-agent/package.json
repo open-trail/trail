@@ -2,7 +2,7 @@
   "name": "trail-agent",
   "description": "Distributed tracing agent for Node.js",
   "repository": "open-trail/node-trail-agent",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "main": "dist/index.js",
   "keywords": [],
   "files": [
@@ -13,14 +13,14 @@
     "istanbul": "^0.4.3",
     "mocha": "^2.4.5",
     "redis": "^2.6.0-2",
-    "trail-instrument-redis": "^2.3.0"
+    "trail-instrument-redis": "^2.4.0"
   },
   "license": "MIT",
   "dependencies": {
     "basictracer": "^2.2.0",
     "continuation-local-storage": "^3.1.7",
     "debug": "^2.2.0",
-    "trail-instrument-http": "^2.3.0",
+    "trail-instrument-http": "^2.4.0",
     "trail-shimmer": "^2.0.0"
   },
   "scripts": {

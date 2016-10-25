@@ -2,7 +2,7 @@
   "name": "trail-instrument-mysql",
   "description": "Instrument mysql for trail",
   "repository": "open-trail/node-trail-instrument-mysql",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "main": "dist/index.js",
   "keywords": [],
   "files": [
@@ -13,7 +13,7 @@
     "istanbul": "^0.4.3",
     "mocha": "^2.4.5",
     "mysql": "^2.11.1",
-    "trail-agent": "^2.3.0"
+    "trail-agent": "^2.4.0"
   },
   "license": "MIT",
   "dependencies": {
